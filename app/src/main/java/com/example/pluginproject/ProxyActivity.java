@@ -1,6 +1,7 @@
 package com.example.pluginproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -65,8 +66,19 @@ public class ProxyActivity extends Activity {
 
     }
 
+    @Override
+    public void startActivity(Intent intent) {
+
+       String className= intent.getStringExtra("className");
+
+
+        Intent proxyIntent=new Intent(this,ProxyActivity.class);
+        proxyIntent.putExtra("className",className);  //TestActivity
+
+        //要给TestActivity进展
+       super.startActivity(proxyIntent);
 
 
 
-
+    }
 }

@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        在插件里面不用配置Activity-->
     </application>
 
 </manifest>

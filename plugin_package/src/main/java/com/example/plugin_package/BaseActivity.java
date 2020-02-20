@@ -2,6 +2,7 @@ package com.example.plugin_package;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -48,5 +49,18 @@ public class BaseActivity extends Activity implements ActivityInterface {
 
     public void setContentView(int resId) {
         appActivity.setContentView(resId);
+    }
+
+    public View findViewById(int layoutId){
+        return appActivity.findViewById(layoutId);
+    }
+
+
+    public void startActivity(Intent intent) {
+
+        Intent intentNew=new Intent();
+        intentNew.putExtra("className",intent.getComponent().getClassName());
+
+        appActivity.startActivity(intentNew);
     }
 }
