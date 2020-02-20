@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".placeholder.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,5 +27,14 @@
         android:layout_marginTop="20dp"
         android:onClick="startPluginActivity"
      />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动HookActivity"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:onClick="startHook"
+        />
 
 </LinearLayout>

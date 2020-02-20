@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".placeholder.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +20,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ProxyActivity"/>
+        <activity android:name=".placeholder.ProxyActivity"/>
 
-        <service android:name=".ProxyService"/>
+        <activity android:name=".hook.HookActivity"/>
+
+        <service android:name=".placeholder.ProxyService"/>
 
     </application>
 
