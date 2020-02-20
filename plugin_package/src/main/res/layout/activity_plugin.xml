@@ -34,4 +34,22 @@
         android:text="插件内部启动插件的Service"
         android:layout_marginTop="20dp"
         />
+
+    <TextView
+        android:id="@+id/register_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="插件内部注册接受广播"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/send_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="插件内部发送广播"
+        android:layout_marginTop="20dp"
+        />
 </LinearLayout>

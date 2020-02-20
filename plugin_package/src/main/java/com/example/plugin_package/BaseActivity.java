@@ -2,8 +2,10 @@ package com.example.plugin_package;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 
@@ -71,5 +73,18 @@ public class BaseActivity extends Activity implements ActivityInterface {
         intentNew.putExtra("className",service.getComponent().getClassName());  //TestService全类名
 
         return appActivity.startService(intentNew);
+    }
+
+    //注册广播，使用宿主环境
+    @Override
+    public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
+        return appActivity.registerReceiver(receiver, filter);
+    }
+
+    //发送广播
+
+    @Override
+    public void sendBroadcast(Intent intent) {
+       appActivity.sendBroadcast(intent);
     }
 }
