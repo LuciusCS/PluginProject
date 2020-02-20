@@ -1,6 +1,7 @@
 package com.example.pluginproject;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -78,7 +79,14 @@ public class ProxyActivity extends Activity {
         //要给TestActivity进展
        super.startActivity(proxyIntent);
 
+    }
 
+    @Override
+    public ComponentName startService(Intent service) {
+        String className= service.getStringExtra("className");
 
+        Intent intentNew=new Intent(this,ProxyService.class);
+        intentNew.putExtra("className",className);  //TestService全类名
+        return super.startService(intentNew);
     }
 }

@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="加载差价"
+        android:text="加载插件"
+        android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:onClick="loadPlugin"
      />
@@ -21,6 +23,8 @@
         android:layout_height="wrap_content"
         android:text="启动插件里面的Activity"
         android:textSize="20sp"
+
+        android:layout_marginTop="20dp"
         android:onClick="startPluginActivity"
      />
 

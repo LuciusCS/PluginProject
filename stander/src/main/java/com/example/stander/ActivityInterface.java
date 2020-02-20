@@ -3,6 +3,9 @@ package com.example.stander;
 import android.app.Activity;
 import android.os.Bundle;
 
+/**
+ * Activity 标准
+ */
 public interface ActivityInterface {
 
     /**

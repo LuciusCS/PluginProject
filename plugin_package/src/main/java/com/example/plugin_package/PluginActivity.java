@@ -17,6 +17,8 @@ public class PluginActivity extends BaseActivity {
 //        Toast.makeText(this,"插件",Toast.LENGTH_LONG).show();
         Toast.makeText(appActivity,"插件",Toast.LENGTH_LONG).show();
 
+
+        //启动插件内部的Activity
         findViewById(R.id.start_activity).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,5 +27,12 @@ public class PluginActivity extends BaseActivity {
             }
         });
 
+        //启动插件内部的Service
+        findViewById(R.id.start_service).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startService(new Intent(appActivity,TestService.class));
+            }
+        });
     }
 }

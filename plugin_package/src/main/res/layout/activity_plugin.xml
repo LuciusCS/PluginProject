@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".PluginActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
         />
 
 <!--    android:onClick="start"会报错，因为在插件厘米昂，没有组件环境-->
@@ -18,8 +21,17 @@
         android:id="@+id/start_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textSize="18sp"
         android:text="插件内部跳转插件的Activity"
+        android:layout_marginTop="20dp"
         />
 
+    <TextView
+        android:id="@+id/start_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="插件内部启动插件的Service"
+        android:layout_marginTop="20dp"
+        />
 </LinearLayout>
