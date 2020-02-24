@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.example.pluginproject.R;
 import com.example.pluginproject.hook.HookActivity;
+import com.example.pluginproject.hook.TestActivity;
 
 import java.io.File;
 
@@ -71,5 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void startHook(View view) {
         startActivity(new Intent(this, HookActivity.class));
+    }
+
+    public void startTest(View view) {
+        startActivity(new Intent(this, TestActivity.class));
     }
 }

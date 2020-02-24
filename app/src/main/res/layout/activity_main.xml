@@ -37,4 +37,13 @@
         android:onClick="startHook"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动TestActivity"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:onClick="startTest"
+        />
+
 </LinearLayout>
