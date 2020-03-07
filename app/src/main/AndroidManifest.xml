@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".application.HookApplicationTest"
+        android:name=".application.HookApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".placeholder.MainActivity">
             <intent-filter>
@@ -23,11 +23,7 @@
 
         <activity android:name=".hook.ProxyActivity"/>
 
-        <activity android:name=".placeholder.ProxyActivity"/>
-
         <activity android:name=".hook.HookActivity"/>
-
-        <service android:name=".placeholder.ProxyService"/>
 
     </application>
 
