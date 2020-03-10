@@ -212,7 +212,7 @@ public class HookApplication extends Application {
 
                         if (actionIntent != null) {
                             intentField.set(obj, actionIntent);
-                        }
+
 
                         /**
                          * 在以下代码中，对插件和宿主进行区分
@@ -235,7 +235,7 @@ public class HookApplication extends Application {
                             //宿主
                             activityInfo.applicationInfo.packageName=actionIntent.getPackage();
                         }
-
+                        }
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -484,7 +484,7 @@ public class HookApplication extends Application {
              * 动态代理
              */
             //使用动态代理替换成我们的逻辑
-            Class<?> mIPackageManagerClass = Class.forName("android.content.pm.IPackageManager");
+            Class mIPackageManagerClass = Class.forName("android.content.pm.IPackageManager");
             Object mIPackageManagerProxy=Proxy.newProxyInstance(getClassLoader(),
                     new Class[]{mIPackageManagerClass},  //要监听的接口
                     new InvocationHandler() {
