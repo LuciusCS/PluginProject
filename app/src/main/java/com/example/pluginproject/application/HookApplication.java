@@ -248,18 +248,18 @@ public class HookApplication extends Application {
         String pluginPath=file.getAbsolutePath();
         File fileDir=this.getDir("pluginDir", Context.MODE_PRIVATE);  //data/data/包名/pluginDir/
 
-        DexClassLoader dexClassLoaderPlugin=new DexClassLoader(pluginPath,fileDir.getAbsolutePath(),null,getClassLoader());
+        DexClassLoader dexClassLoader=new DexClassLoader(pluginPath,fileDir.getAbsolutePath(),null,getClassLoader());
 
         Class mBaseDexClassLoaderClassPlugin=Class.forName("dalvik.system.BaseDexClassLoader");
         // private final DexPathList pathlist;
-        Field pathListFieldPlugin=mBaseDexClassLoaderClass.getDeclaredField("pathList");
+        Field pathListFieldPlugin=mBaseDexClassLoaderClassPlugin.getDeclaredField("pathList");
         pathListFieldPlugin.setAccessible(true);
-        Object mDexPathListPlugin=pathListField.get(pathClassLoader);
+        Object mDexPathListPlugin=pathListFieldPlugin.get(dexClassLoader);
 
-        Field dexElementsFieldPlugin = mDexPathList.getClass().getDeclaredField("dexElements");
+        Field dexElementsFieldPlugin = mDexPathListPlugin.getClass().getDeclaredField("dexElements");
         dexElementsFieldPlugin.setAccessible(true);
         //本质是Element[] dexElements
-        Object dexElementPlugin = dexElementsField.get(mDexPathListPlugin);
+        Object dexElementPlugin = dexElementsFieldPlugin.get(mDexPathListPlugin);
 
 
         //第三步：创建出新的dexElements[]
@@ -271,24 +271,24 @@ public class HookApplication extends Application {
         //参数1：int[] 、String[] ，这里需要Element[]
         //参数2：数组对象的长度
         //newElements的本质是newDexElements
-        Object newElements = Array.newInstance(dexElements.getClass().getComponentType(), sumDexLength);//创建数组参数
+        Object newDexElements = Array.newInstance(dexElements.getClass().getComponentType(), sumDexLength);//创建数组参数
 
         //第四步：宿主dexElements+插件dexElements = ——》新的dexElements
         for (int i=0;i<sumDexLength;i++){
             //先融合宿主
             if (i<mainDexLength){
                 //参数一：新要融合的容器 --- newElements
-                Array.set(newElements,i,Array.get(dexElements,i));
+                Array.set( newDexElements,i,Array.get(dexElements,i));
             }else{
                 //再融合插件的
-                Array.set(newElements,i,Array.get(dexElementPlugin,i-mainDexLength));
+                Array.set( newDexElements,i,Array.get(dexElementPlugin,i-mainDexLength));
             }
 
         }
 
         //第五步：把新的DexElements，设置到宿主中去
         //宿主
-        dexElementsField.set(mDexPathList,newElements);
+        dexElementsField.set(mDexPathList,newDexElements);
 
 
 
@@ -317,7 +317,7 @@ public class HookApplication extends Application {
         //执行， 才能把插件的路径加进去  public final int addAssetPath(String path) 方法才能把路径添加进去
         Method method = assetManager.getClass().getDeclaredMethod("addAssetPath", String.class);
         method.setAccessible(true);
-        method.invoke(assetManager,file.getAbsoluteFile());
+        method.invoke(assetManager,file.getAbsolutePath());
 
         //实例化此方法 final StringBlock[] ensureStringBlocks()
         Method ensureStringBlocksMethod = assetManager.getClass().getDeclaredMethod("ensureStringBlocks");
