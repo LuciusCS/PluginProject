@@ -56,12 +56,6 @@ public class HookApplication extends Application {
             Log.e(TAG, "Hook失败" + e.getMessage());
         }
 
-//        try {
-//            pluginToApplication();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            Log.e(TAG,"pluginToApplication失败"+e.getMessage());
-//        }
 
         try {
             customLoadedApkAction();
@@ -256,83 +250,6 @@ public class HookApplication extends Application {
 
 
 
-    /**
-     * 把插件的dexElement 和宿主的dexElement 插件融为一体
-     *
-     * @throws Exception
-     */
-    private void pluginToApplication() throws Exception {
-
-        //第一步： 找到宿主的 dexElements得到此对象
-
-        PathClassLoader pathClassLoader = (PathClassLoader) this.getClassLoader(); //本质就是PathClassLoader
-        Class mBaseDexClassLoaderClass = Class.forName("dalvik.system.BaseDexClassLoader");
-        // private final DexPathList pathlist;
-        Field pathListField = mBaseDexClassLoaderClass.getDeclaredField("pathList");
-        pathListField.setAccessible(true);
-        Object mDexPathList = pathListField.get(pathClassLoader);
-
-        Field dexElementsField = mDexPathList.getClass().getDeclaredField("dexElements");
-        dexElementsField.setAccessible(true);
-        //本质是Element[] dexElements
-        Object dexElements = dexElementsField.get(mDexPathList);
-
-
-        //第二步： 找到插件的dexElements得到此对象
-
-        File file = new File(Environment.getExternalStorageDirectory() + File.separator + "p.apk");
-        if (!file.exists()) {
-            throw new FileNotFoundException("没有找到插件包");
-        }
-
-        String pluginPath = file.getAbsolutePath();
-        File fileDir = this.getDir("pluginDir", Context.MODE_PRIVATE);  //data/data/包名/pluginDir/
-
-        DexClassLoader dexClassLoaderPlugin = new DexClassLoader(pluginPath, fileDir.getAbsolutePath(), null, getClassLoader());
-
-        Class mBaseDexClassLoaderClassPlugin = Class.forName("dalvik.system.BaseDexClassLoader");
-        // private final DexPathList pathlist;
-        Field pathListFieldPlugin = mBaseDexClassLoaderClass.getDeclaredField("pathList");
-        pathListFieldPlugin.setAccessible(true);
-        Object mDexPathListPlugin = pathListField.get(pathClassLoader);
-
-        Field dexElementsFieldPlugin = mDexPathList.getClass().getDeclaredField("dexElements");
-        dexElementsFieldPlugin.setAccessible(true);
-        //本质是Element[] dexElements
-        Object dexElementPlugin = dexElementsField.get(mDexPathListPlugin);
-
-
-        //第三步：创建出新的dexElements[]
-
-        int mainDexLength = Array.getLength(dexElements);
-        int pluginDexLength = Array.getLength(dexElementPlugin);
-        int sumDexLength = mainDexLength + pluginDexLength;
-
-        //参数1：int[] 、String[] ，这里需要Element[]
-        //参数2：数组对象的长度
-        //newElements的本质是newDexElements
-        Object newElements = Array.newInstance(dexElements.getClass().getComponentType(), sumDexLength);//创建数组参数
-
-        //第四步：宿主dexElements+插件dexElements = ——》新的dexElements
-        for (int i = 0; i < sumDexLength; i++) {
-            //先融合宿主
-            if (i < mainDexLength) {
-                //参数一：新要融合的容器 --- newElements
-                Array.set(newElements, i, Array.get(dexElements, i));
-            } else {
-                //再融合插件的
-                Array.set(newElements, i, Array.get(dexElementPlugin, i - mainDexLength));
-            }
-
-        }
-
-        //第五步：把新的DexElements，设置到宿主中去
-        //宿主
-        dexElementsField.set(mDexPathList, newElements);
-
-
-    }
-
     private Resources resources;
     private AssetManager assetManager;
 
@@ -355,7 +272,7 @@ public class HookApplication extends Application {
         //执行， 才能把插件的路径加进去  public final int addAssetPath(String path) 方法才能把路径添加进去
         Method method = assetManager.getClass().getDeclaredMethod("addAssetPath", String.class);
         method.setAccessible(true);
-        method.invoke(assetManager, file.getAbsoluteFile());
+        method.invoke(assetManager, file.getAbsolutePath());
 
         //实例化此方法 final StringBlock[] ensureStringBlocks()
         Method ensureStringBlocksMethod = assetManager.getClass().getDeclaredMethod("ensureStringBlocks");
@@ -500,7 +417,8 @@ public class HookApplication extends Application {
                     }
             );
 
-
+            //因为sPackageManager是静态的所以可以使用null
+            sPackageManagerField.set(null,mIPackageManagerProxy);
         }catch (Exception e){
 
         }
