@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/PluginProject.iml" filepath="$PROJECT_DIR$/PluginProject.iml" group="PluginProject" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="PluginProject/app" />
       <module fileurl="file://$PROJECT_DIR$/plugin_package/plugin_package.iml" filepath="$PROJECT_DIR$/plugin_package/plugin_package.iml" group="PluginProject/plugin_package" />
-      <module fileurl="file://$PROJECT_DIR$/stander/stander.iml" filepath="$PROJECT_DIR$/stander/stander.iml" group="PluginProject/stander" />
     </modules>
   </component>
 </project>
