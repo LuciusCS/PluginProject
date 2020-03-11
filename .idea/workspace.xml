@@ -10,6 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="f17f2233-cdf1-4e01-8aa8-f882ea5ca445" name="Default Changelist" comment="">
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -48,18 +49,25 @@
 >>>>>>> HookFuse
 >>>>>>> LoadedApk
     </list>
+=======
+    <list default="true" id="f17f2233-cdf1-4e01-8aa8-f882ea5ca445" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_24" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
+=======
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_29" />
+>>>>>>> Stashed changes
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -89,6 +97,7 @@
     <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -101,6 +110,8 @@
       </map>
     </option>
 >>>>>>> LoadedApk
+=======
+>>>>>>> Stashed changes
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -109,8 +120,11 @@
     <option name="width" value="1355" />
     <option name="height" value="864" />
   </component>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   <component name="ProjectId" id="1YmOhnwnNrUXdlFoZkOV0lunGCE" />
+=======
+>>>>>>> Stashed changes
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_24" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-10T12:45:39.825Z" />
@@ -285,6 +299,7 @@
         </entry>
       </map>
     </option>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <option name="RECENT_FILTERS">
       <map>
@@ -303,5 +318,7 @@
     </option>
 =======
 >>>>>>> LoadedApk
+=======
+>>>>>>> Stashed changes
   </component>
 </project>
