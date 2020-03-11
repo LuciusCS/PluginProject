@@ -1,0 +1,46 @@
+
+占位式框架  插件 ---》》（standard标准式） 必须在插件中使用宿主的环境
+
+Hook  式 （宿主和element进行融合） 在插件中可以随意使用this, 融合到一起后，插件可以使用到宿主的环境
+插件越多，内存中 newDexElements 就会越大
+
+LoadedApk 插件化控制ClassLoader
+
+PathClassLoader ---->宿主的class
+自定义ClassLoader --->产检的class
+
+ActivityThread 源码分析
+
+startActivity --->  Activity --> Instrumentation --> AMS检查 --》
+    ActivityThread --mh  LAUNCH_ACTIVITY（自己去处理LoaderApk）
+
+    //在Android P以下的ActivityThread才有的
+    case LAUNCH_ACTIVITY：{
+
+    }
+
+
+ 1、 public final LoadedApk getPackageInfoNoCheck == 宿主的
+ 2、 缓冲中的 final ArrayMap<String,WeakReference<LoadedApk>> mPackages 默认保存的是宿主的LoadApk
+
+
+ LoadApk --- 宿主的  ---》LoadApk.ClassLoader ---> 宿主的class
+
+ java.lang.ClassLoader cl=r.packageInfo.getClassLoader();  //LoadApk里面的ClassLoader
+
+ （Activity）cl.loadClass(className).newInstance(); 实例化的Activity --> 宿主的loadedApk里面的ClassLoader  去实例化的
+
+
+
+
+
+宿主中的LoadedApk.ClassLoader 去加载宿主中的class 然后实例化
+
+ 自定义一个 LoadedApk 然后保存 ---》 mPackages
+
+ LoadApk  --- 插件的 ---- 》 LoadedApk.ClassLoader -- >> 插件中的class
+
+
+整体流程:
+    宿主：startActivity ----> Activity -->Instrumentation  ---> AMS检查 --》ActivityThread
+        mPackages.value 中去除LoadedApk.ClassLoader  --- >实例化Activity（只能记载宿主的）

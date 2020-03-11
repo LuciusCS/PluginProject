@@ -8,34 +8,7 @@
     android:gravity="center"
     tools:context=".placeholder.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="加载插件"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:onClick="loadPlugin"
-     />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="启动插件里面的Activity"
-        android:textSize="20sp"
-
-        android:layout_marginTop="20dp"
-        android:onClick="startPluginActivity"
-     />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="启动HookActivity"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:onClick="startHook"
-        />
 
     <TextView
         android:layout_width="wrap_content"
