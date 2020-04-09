@@ -12,6 +12,7 @@
   <component name="ChangeListManager">
 <<<<<<< Updated upstream
     <list default="true" id="f17f2233-cdf1-4e01-8aa8-f882ea5ca445" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -48,6 +49,16 @@
       <change beforePath="$PROJECT_DIR$/plugin_package/src/main/java/com/example/plugin_package/TestService.java" beforeDir="false" />
 >>>>>>> HookFuse
 >>>>>>> LoadedApk
+=======
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pluginproject/application/ApkCopyAssetsToDir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pluginproject/application/DexElementFuse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pluginproject/application/MyApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pluginproject/utils/AndroidJDKVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
 =======
     <list default="true" id="f17f2233-cdf1-4e01-8aa8-f882ea5ca445" name="Default Changelist" comment="" />
@@ -59,6 +70,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_24" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -67,6 +79,14 @@
   </component>
 =======
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_29" />
+>>>>>>> Stashed changes
+=======
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_29" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
 >>>>>>> Stashed changes
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -98,6 +118,7 @@
   </component>
   <component name="Git.Settings">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -112,6 +133,13 @@
 >>>>>>> LoadedApk
 =======
 >>>>>>> Stashed changes
+=======
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+>>>>>>> Stashed changes
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -121,8 +149,11 @@
     <option name="height" value="864" />
   </component>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   <component name="ProjectId" id="1YmOhnwnNrUXdlFoZkOV0lunGCE" />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   <component name="PropertiesComponent">
@@ -148,6 +179,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.pluginproject.application" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.pluginproject.application" />
     </key>
   </component>
@@ -300,6 +334,7 @@
       </map>
     </option>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <option name="RECENT_FILTERS">
       <map>
@@ -318,6 +353,8 @@
     </option>
 =======
 >>>>>>> LoadedApk
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   </component>

@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-public class PluginActivity extends Activity {
+public class PluginActivity extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,12 +21,12 @@ public class PluginActivity extends Activity {
 
 
 //        //启动插件内部的Activity
-//        findViewById(R.id.start_activity).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        findViewById(R.id.start_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( PluginActivity .this,TestActivity.class));
+            }
+        });
 //
 //        //启动插件内部的Service
 //        findViewById(R.id.start_service).setOnClickListener(new View.OnClickListener() {
